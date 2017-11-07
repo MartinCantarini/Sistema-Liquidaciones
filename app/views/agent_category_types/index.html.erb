@@ -1,0 +1,14 @@
+<h1>Categoría de Agentes</h1>
+<table>
+  <tr>
+    <th>Descripción</th>
+    <th>Acciones</th>
+    <th><%= link_to 'nueva categoría', new_agent_category_type_path%></th>
+  </tr>
+  <%@categories.each do |category|%>
+    <tr>
+      <td><%=category.description%></td>
+      <td><%= link_to 'editar', edit_agent_category_type_path(category.id) %> | <%= link_to 'eliminar', agent_category_type_path(category.id), method: :delete, data: { confirm: 'Está seguro?' }  %></td>
+    </tr>
+  <%end%>
+</table>

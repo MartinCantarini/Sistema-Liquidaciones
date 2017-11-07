@@ -1,0 +1,2 @@
+module AgentCategoriesHelper
+end

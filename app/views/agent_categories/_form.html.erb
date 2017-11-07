@@ -1,0 +1,8 @@
+<%=form_for @category_agent do |ca|%>
+  Descripción: <%=ca.text_field :description%>
+  Monto: <%=ca.text_field :mount%>
+  Categoría del Agente:
+  <%=ca.collection_select :agent_category_type_id, AgentCategoryType.all, :id, :description, { prompt: "Elegir una categoría" }, class: "browser-default" %>
+  <br />
+  <%=ca.submit 'Guardar'%>
+<%end %>

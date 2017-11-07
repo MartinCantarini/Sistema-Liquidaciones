@@ -1,0 +1,17 @@
+<h1>Categorías</h1>
+<table>
+  <tr>
+    <th>Descripición</th>
+    <th>Monto</th>
+    <th>Categoría</th>
+    <th><%= link_to 'nueva categoría', new_agent_category_path%></th>
+  </tr>
+  <%@categories_agent.each do |ca|%>
+  <tr>
+    <td><%=ca.description%></td>
+    <td><%=ca.mount%></td>
+    <td><%=AgentCategoryType.get_description(ca.agent_category_type_id)%></td>
+    <td><%=link_to 'editar', edit_agent_category_path(ca.id)%> | <%=link_to 'eliminar', agent_category_path(ca.id), method: :delete, data:{confirm: 'Está seguro?'}%></td>
+  </tr>
+  <%end%>
+</table>
